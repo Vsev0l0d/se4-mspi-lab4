@@ -12,6 +12,6 @@ public class AverageInterval implements AverageIntervalMBean {
 
     @Override
     public double getAverageInterval() {
-        return (sum / (double) number) / 1000_000_000;
+        return (sum / (double) number) / 1000;
     }
 }

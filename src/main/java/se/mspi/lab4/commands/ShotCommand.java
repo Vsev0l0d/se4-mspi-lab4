@@ -24,7 +24,7 @@ public class ShotCommand extends Command {
             Shot shot = shootingRangeSimulator.getHitChecker().shoot(x, y, r);
 
             var lastShotTime = shootingRangeSimulator.getLastShotTime();
-            var now = System.nanoTime();
+            var now = System.currentTimeMillis();
             if (lastShotTime == null) {
                 shootingRangeSimulator.setLastShotTime(now);
             } else {
