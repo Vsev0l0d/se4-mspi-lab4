@@ -1,8 +1,8 @@
 package se.mspi.lab4.mbeans;
 
 public class AverageInterval implements AverageIntervalMBean {
-    long sum;
-    long number;
+    private long sum;
+    private long number;
 
     @Override
     public void update(long nextInterval) {

@@ -6,9 +6,9 @@ import javax.management.Notification;
 import javax.management.NotificationBroadcasterSupport;
 
 public class ShotCounter extends NotificationBroadcasterSupport implements ShotCounterMBean {
-    long countOfAllShots = 0;
-    long countOfSuccessfulShots = 0;
-    long missesInRow = 0;
+    private long countOfAllShots = 0;
+    private long countOfSuccessfulShots = 0;
+    private long missesInRow = 0;
 
     @Override
     public void addShot(Shot shot) {
