@@ -1,7 +1,12 @@
 package se.mspi.lab4;
 
 import se.mspi.lab4.commands.*;
+import se.mspi.lab4.mbeans.AverageInterval;
+import se.mspi.lab4.mbeans.AverageIntervalMBean;
+import se.mspi.lab4.mbeans.ShotCounterMBean;
+import se.mspi.lab4.mbeans.ShotCounter;
 
+import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,6 +15,12 @@ public class ShootingRangeSimulator {
     private final Map<String, Command> commandMap = new HashMap<>();
     private final ShotHistory shotHistory = new ShotHistory();
     private final HitChecker hitChecker = new HitChecker();
+
+    private Long lastShotTime = null;
+
+    // MBeans
+    private final ShotCounterMBean shotCounterMBean = new ShotCounter();
+    private final AverageIntervalMBean averageIntervalMBean = new AverageInterval();
 
     public ShootingRangeSimulator() {
         addCommands(
@@ -57,5 +68,21 @@ public class ShootingRangeSimulator {
 
     public HitChecker getHitChecker() {
         return hitChecker;
+    }
+
+    public Long getLastShotTime() {
+        return lastShotTime;
+    }
+
+    public void setLastShotTime(Long lastShotTime) {
+        this.lastShotTime = lastShotTime;
+    }
+
+    public ShotCounterMBean getShotCounterMBean() {
+        return shotCounterMBean;
+    }
+
+    public AverageIntervalMBean getAverageIntervalMBean() {
+        return averageIntervalMBean;
     }
 }
