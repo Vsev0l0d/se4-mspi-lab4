@@ -6,6 +6,8 @@ import se.mspi.lab4.mbeans.AverageIntervalMBean;
 import se.mspi.lab4.mbeans.ShotCounterMBean;
 import se.mspi.lab4.mbeans.ShotCounter;
 
+import javax.management.*;
+import java.lang.management.ManagementFactory;
 import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +39,18 @@ public class ShootingRangeSimulator {
         }
     }
 
+    private void initMBeans() {
+        MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+        try {
+            mbs.registerMBean(shotCounterMBean, new ObjectName("Dodo:type=ShotCounter"));
+            mbs.registerMBean(averageIntervalMBean,  new ObjectName("Dodo:type=AverageInterval"));
+        } catch (JMException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void start() {
+        initMBeans();
         Scanner scanner = new Scanner(System.in);
         String input;
         //noinspection InfiniteLoopStatement
