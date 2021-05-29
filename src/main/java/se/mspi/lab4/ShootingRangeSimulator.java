@@ -42,8 +42,8 @@ public class ShootingRangeSimulator {
     private void initMBeans() {
         MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
         try {
-            mbs.registerMBean(shotCounterMBean, new ObjectName("Dodo:type=ShotCounter"));
-            mbs.registerMBean(averageIntervalMBean,  new ObjectName("Dodo:type=AverageInterval"));
+            mbs.registerMBean(shotCounterMBean, new ObjectName("se.mspi.lab4.mbeans:type=ShotCounter"));
+            mbs.registerMBean(averageIntervalMBean,  new ObjectName("se.mspi.lab4.mbeans:type=AverageInterval"));
         } catch (JMException e) {
             e.printStackTrace();
         }
