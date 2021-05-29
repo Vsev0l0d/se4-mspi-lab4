@@ -1,6 +1,6 @@
-package se.mspi.lab3.commands;
+package se.mspi.lab4.commands;
 
-import se.mspi.lab3.ShootingRangeSimulator;
+import se.mspi.lab4.ShootingRangeSimulator;
 
 import java.util.Map;
 

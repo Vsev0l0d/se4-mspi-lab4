@@ -1,4 +1,4 @@
-package se.mspi.lab3;
+package se.mspi.lab4;
 
 public class Shot {
     private float x;

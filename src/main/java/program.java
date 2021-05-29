@@ -1,5 +1,5 @@
 // var. 31572
-public class Lab4 {
+class Lab4 {
     public static void main(String[] args) {
         E a = new E();
         E b = new D();

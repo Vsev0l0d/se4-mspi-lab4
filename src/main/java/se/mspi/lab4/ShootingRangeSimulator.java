@@ -1,6 +1,6 @@
-package se.mspi.lab3;
+package se.mspi.lab4;
 
-import se.mspi.lab3.commands.*;
+import se.mspi.lab4.commands.*;
 
 import java.util.HashMap;
 import java.util.Map;
